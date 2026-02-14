@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Chikita 💖</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #ffd6e8, #ffeaf4);
+      color: #5a2a3c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: white;
+      max-width: 420px;
+      width: 100%;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      color: #ff5c8a;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-weight: 400;
+      margin-top: 0;
+      font-size: 1.1em;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 0.95em;
+      line-height: 1.7;
+    }
+
+    .date {
+      margin: 25px 0;
+      padding: 12px;
+      background: #ffe3ef;
+      border-radius: 12px;
+      font-weight: 500;
+    }
+
+    .slideshow {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      margin-top: 25px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    button {
+      margin-top: 20px;
+      background: #ff5c8a;
+      color: white;
+      border: none;
+      padding: 12px 22px;
+      font-size: 1em;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #ff5c8a;
+      animation: fadeIn 1s ease;
+    }
+
+    iframe {
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>For Chikita</h1>
+    <h2>My Bica ❤️</h2>
+
+    <div class="message">
+      Hallo sayang,<br><br>
+
+      Gak kerasa ya…  
+      Maret nanti akan jadi <b>satu tahun relationship</b> kita.  
+      But before that,  
+      yuk kita rayain Valentine Day kita dulu. 💖<br><br>
+
+      <b>Happy Valentine, sayaang.</b><br>
+      Thank you for always giving me the chance  
+      to keep fighting for you.<br><br>
+
+      Aku tahu ini nggak mudah.  
+      There are days when everything feels heavy.  
+      But please believe me, sayang…  
+      akan ada waktunya semua usaha kita terwujud,  
+      dan <b>all our dreams will finally come true.</b><br><br>
+
+      Kamu itu duniaku.  
+      Kalau ada satu alasan kenapa aku pulang ke Indonesia,  
+      <b>it’s you — and only you.</b><br><br>
+
+      Kamu rumahku, kamu duniaku.  
+      Tau nggak sih?  
+      24/7, in my head…  
+      <b>it’s always you.</b> ❤️
+    </div>
+
+    <div class="date">
+      💖 Valentine Date<br>
+      <b>15 February 2026</b>
+    </div>
+
+    <!-- SLIDESHOW FOTO -->
+    <div class="slideshow">
+      <img src="photo1.jpg" class="slide active">
+      <img src="photo2.jpg" class="slide">
+      <img src="photo3.jpg" class="slide">
+      <img src="photo4.jpg" class="slide">
+      <img src="photo5.jpg" class="slide">
+      <img src="photo6.jpg" class="slide">
+      <img src="photo7.jpg" class="slide">
+      <img src="photo8.jpg" class="slide">
+      <img src="photo9.jpg" class="slide">
+    </div>
+
+    <button onclick="showLove()">Will you be my Valentine?</button>
+
+    <div id="answer" class="hidden">
+      💕 Thank you for being my world 💕
+    </div>
+
+    <div id="music" class="hidden">
+      <iframe width="100%" height="200"
+        src="https://www.youtube.com/embed/GxldQ9eX2wo?autoplay=1&loop=1&playlist=GxldQ9eX2wo"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <script>
+    function showLove() {
+      document.getElementById("answer").style.display = "block";
+      document.getElementById("music").style.display = "block";
+    }
+
+    let slides = document.querySelectorAll(".slide");
+    let index = 0;
+
+    setInterval(() => {
+      slides[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+    }, 3000);
+  </script>
+
+</body>
+</html>
